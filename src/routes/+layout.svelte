@@ -3,6 +3,8 @@
     import Modal from "../lib/components/search_competence/modal.svelte";
 
     let showModal = false;
+
+    let VERSION_SOFTWARE = '1.1.2';
     
 </script>
 
@@ -40,6 +42,8 @@
                     </span>
                 <a href="/esperienze/">Esperienze</a>
             </div>
+
+            <footer><p>v {VERSION_SOFTWARE}</p></footer>
             
 
         </div>
@@ -81,6 +85,8 @@
                 <a href="esperienze">Esperienze</a>
             </div>
 
+            <footer><p>v {VERSION_SOFTWARE}</p></footer>
+
         </div>
 
     </div>
@@ -119,6 +125,11 @@
 
     .navbar > .item > a{
         text-decoration: none;
+        color: white;
+    }
+
+    .navbar > footer{
+        text-align: center;
         color: white;
     }
 
@@ -187,7 +198,7 @@
         width: 95%;
         border: 1px solid black;
         box-shadow: 1px 1px 6px 2px #014f86;
-        margin-top: 5%;
+        margin: 14px;
     }
 
     .container > .right{
@@ -247,7 +258,7 @@
         width: 95%;
         border: 1px solid black;
         box-shadow: 1px 1px 6px 2px #014f86;
-        margin-top: 5%;
+        margin: 14px;
         height: min-content;
         
   
@@ -262,6 +273,11 @@
 
     .navbar > .item > a{
         text-decoration: none;
+        color: white;
+    }
+
+    .navbar > footer{
+        text-align: center;
         color: white;
     }
 
