@@ -57,11 +57,6 @@
     <h2>TITOLI DI STUDIO</h2>
 
     <div class="item">
-        <h3>Licenza Media ( 2016 – 2019 )</h3>
-        <p>Scuola Piero Calamandrei Torino</p>
-    </div>
-
-    <div class="item">
         <h3>Diploma di perito informatico ( 2019 – <span class="material-symbols-outlined">schedule</span> )</h3>
         <p>Presso l’Istituto Internazionale Edoardo Agnelli di Torino</p>
     </div>
