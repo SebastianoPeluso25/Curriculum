@@ -1,5 +1,10 @@
 <script>
 
+    import Download from "../lib/components/search_competence/download.svelte";
+    
+    let URL_cv = "./static/Curriculum_Vitae_Sebastiano_Peluso.pdf";
+    let Cv = "Curriculum_Vitae_Sebastiano_Peluso.pdf";
+
 </script>
 
 <svelte:head><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -14,11 +19,10 @@
             <span class="material-symbols-outlined">mail</span>
         </div>
         <div class="testo">
-            <span>Via Matteo Bartoli, 20, 10135, Torino, Italia</span>
+            <span>Torino, Italia</span>
             <span>+39 3896378322</span>
             <span ><a href="mailto:sebastianopeluso27@gmail.com">sebastianopeluso27@gmail.com</a></span>
         </div>
-
     </div>
     <div class="box">
         <div class="icon">
@@ -30,9 +34,13 @@
             <span ><a target="_blank" href="https://www.linkedin.com/in/sebastiano-peluso-4101202a8/">Linkedin Profile</a></span>
             <span>25 / 02 / 2005</span>
             <span></span>
-            
         </div>
     </div>
+</div>
+<hr>
+<div class="CV">
+    <h2>Scarica qui il CV</h2>
+    <Download file={Cv} fileurl={URL_cv} />
 </div>
 
 <hr>
@@ -79,7 +87,21 @@
 
     @media(min-width: 480px){
 
-        
+        .CV{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .CV > h2{
+            font-size: 20px;
+        }
+
 
         .data{
         display: flex;
@@ -182,6 +204,22 @@
     /**MOBILE*/
 
     @media(max-width: 480px){
+
+        .CV{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+        }
+
+        .CV > h2{
+            font-size: 20px;
+        }
+    
         .data{
         display: flex;
         flex-direction: column;

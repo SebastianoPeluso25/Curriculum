@@ -4,7 +4,7 @@
 
     let showModal = false;
 
-    let VERSION_SOFTWARE = '1.1.2';
+    let VERSION_SOFTWARE = '1.1.4';
     
 </script>
 
