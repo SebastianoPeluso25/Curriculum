@@ -6,7 +6,7 @@
     let bool = 0;
     let now = new Date()
 
-    let action = 'create';
+/*     let action = 'create';
     let tipouser;
     let nomeazienda;
     export let form;
@@ -19,9 +19,9 @@
     if (form?.form_error) {
         error = true;
         nomeazienda = form.form_vals.nomeazienda;
-    }
+    } */
 
-    export let showModal;
+   export let showModal;
     
     function Download() {
         const downloadLink = document.createElement("a");
@@ -34,12 +34,12 @@
     </script>
 
     {#if bool == 0}
-        <button on:click={()=>showModal = true} >Download</button>
+        <button on:click={Download}  on:click={()=>showModal = true} >Download</button>
     {:else if bool == 1 }
         <p>Grazie per il download {now}</p>
     {/if}
 
-    <ModalDownload bind:showModal={showModal} >
+<!--     <ModalDownload bind:showModal={showModal} >
         <form action="?/{action}" method="post">
             <div class="row">
                 <label for="tipouser">Tipo</label>
@@ -63,7 +63,7 @@
             
         </form>
     </ModalDownload>
-
+ -->
 
 
     <style>

@@ -1,8 +1,8 @@
 
 
-import Database from "better-sqlite3";
+/* import Database from "better-sqlite3";
 
-const db = new Database('data.db', {verbose: console.log});
+const db = new Database('data.db', {verbose: console.log}); */
 
 let date = new Date();
 
@@ -13,7 +13,7 @@ export function load({params}) {
     
 }
 
-export const actions={
+/* export const actions={
     create: async({cookies, request})=>{
         const data = await request.formData();
         console.log("create action");
@@ -43,4 +43,4 @@ export const actions={
         }
 
     }
-}
+} */
