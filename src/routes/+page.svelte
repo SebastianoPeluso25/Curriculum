@@ -1,9 +1,13 @@
 <script>
 
     import Download from "../lib/components/search_competence/download.svelte";
+    import Modal2 from "../lib/components/search_competence/modalDownload.svelte";
+    import URL_cv from '$lib/Curriculum_Vitae_Sebastiano_Peluso.pdf';
     
-    let URL_cv = "./static/Curriculum_Vitae_Sebastiano_Peluso.pdf";
+    //let URL_cv = "./static/Curriculum_Vitae_Sebastiano_Peluso.pdf";
     let Cv = "Curriculum_Vitae_Sebastiano_Peluso.pdf";
+
+    export let showModal;
 
 </script>
 

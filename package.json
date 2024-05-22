@@ -16,6 +16,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"better-sqlite3": "^10.0.0",
 		"framework7-icons": "^5.0.5",
 		"framework7-svelte": "^8.3.3"
 	}
