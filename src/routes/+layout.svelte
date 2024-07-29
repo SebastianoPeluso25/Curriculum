@@ -4,7 +4,7 @@
 
     let showModal = false;
 
-    let VERSION_SOFTWARE = '1.1.4';
+    let VERSION_SOFTWARE = '1.2.0';
     
 </script>
 
@@ -23,7 +23,7 @@
         {/if}
 
     </button>
-
+<!--navbar left mobile version-->
     <Modal bind:showModal>
     
         <div class="navbar">
@@ -42,6 +42,7 @@
                     </span>
                 <a href="/esperienze/">Esperienze</a>
             </div>
+            
 
             <footer><p>v {VERSION_SOFTWARE}</p></footer>
             
@@ -58,7 +59,7 @@
 </div>
 
 
-
+<!--navbar left pc version -->
 
 <div class="container">
     <div class="left">

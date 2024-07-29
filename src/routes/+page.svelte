@@ -11,8 +11,12 @@
 
 </script>
 
-<svelte:head><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></svelte:head>
+<svelte:head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</svelte:head>
 
 
 <div class="data">
@@ -36,7 +40,7 @@
         </div>
         <div class="testo">
             <span ><a target="_blank" href="https://www.linkedin.com/in/sebastiano-peluso-4101202a8/">Linkedin Profile</a></span>
-            <span>25 / 02 / 2005</span>
+            <span><!-- 25 / 02 / 2005 --></span>
             <span></span>
         </div>
     </div>
@@ -53,8 +57,7 @@
 
     <h2>PRESENTAZIONE</h2>
 
-    <p>Frequento l'Istituto internazionale salesiano Edoardo Agnelli di Torino. Sono uno 
-        studente della 5 INFORMATICA e sono contento di avere scelto questo indirizzo. 
+    <p>Diplomato presso l'Istituto internazionale salesiano Edoardo Agnelli di Torino. contento di avere scelto questo indirizzo. 
         In particolare sono interessato alla programmazione web con html, css e 
         javascript e svelte / svelte kit, informatica con il linguaggio SQL e sistemi e reti. 
         Sono un ragazzo solare, molto creativo e mi impegno sempre per portare a 
@@ -69,7 +72,7 @@
     <h2>TITOLI DI STUDIO</h2>
 
     <div class="item">
-        <h3>Diploma di perito informatico ( 2019 – <span class="material-symbols-outlined">schedule</span> )</h3>
+        <h3>Diploma di perito informatico ( 2019 – 2024 ) <span class="material-symbols-outlined">school</span></h3>
         <p>Presso l’Istituto Internazionale Edoardo Agnelli di Torino</p>
     </div>
 
@@ -193,7 +196,7 @@
     }
 
     .item > h3 > .material-symbols-outlined{
-        color: darkgoldenrod;
+        color: gold;
         font-weight: bolder;
     }
 
@@ -317,7 +320,7 @@
     }
 
     .item > h3 > .material-symbols-outlined{
-        color: darkgoldenrod;
+        color: gold;
         font-weight: bolder;
     }
 

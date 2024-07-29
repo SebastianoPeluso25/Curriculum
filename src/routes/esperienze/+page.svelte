@@ -101,7 +101,7 @@
         width: 100%;
         grid-template-columns: 2.5fr 3fr;
         grid-template-rows: 1fr;
-
+        
         margin: auto;
         justify-items: center;
 
