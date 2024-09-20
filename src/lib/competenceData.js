@@ -17,6 +17,22 @@ export const bookData = [{
     "icon": "Code",
 },
 {
+    "title": "Sviluppo Web",
+    "icon": "Code",
+},
+{
+    "title": "Web designer",
+    "icon": "Code",
+},
+{
+    "title": "Digital Video",
+    "icon": "Movie",
+},
+{
+    "title": "Video Editor",
+    "icon": "Movie",
+},
+{
     "title": "C#",
     "icon": "Code",
 },
@@ -64,19 +80,11 @@ export const bookData = [{
     "icon": "",
 },
 {
-    "title": "Digital Video",
-    "icon": "Movie",
-},
-{
     "title": "Microsoft office",
     "icon": "Edit_Document",
 },
 {
     "title": "Sviluppo frontend",
-    "icon": "Code",
-},
-{
-    "title": "Sviluppo Web",
     "icon": "Code",
 },
 {

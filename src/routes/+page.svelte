@@ -59,9 +59,9 @@
 
     <p>Diplomato presso l'Istituto internazionale salesiano Edoardo Agnelli di Torino. contento di avere scelto questo indirizzo. 
         In particolare sono interessato alla programmazione web con html, css e 
-        javascript e svelte / svelte kit, informatica con il linguaggio SQL e sistemi e reti. 
+        javascript e svelte / svelte kit nella creazione di siti web. 
         Sono un ragazzo solare, molto creativo e mi impegno sempre per portare a 
-        termine i miei progetti. Mi piace il mondo del web-developer e ho il desiderio di 
+        termine i miei progetti. Mi piace il mondo del web-developer / web-designer e ho il desiderio di 
         imparare e di ampliare le mie esperienze
     </p>
 </div>

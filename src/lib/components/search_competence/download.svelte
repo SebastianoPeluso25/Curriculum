@@ -1,19 +1,16 @@
 <script>
 	import ModalDownload from "./modalDownload.svelte";
+    import { db } from "../../firebase.js";
+    import { collection, addDoc, query, onSnapshot } from "firebase/firestore";
+    import { onMount } from "svelte";
+
     export let fileurl;
     export let file;
 
     let bool = 0;
     let now = new Date()
 
-/*     let action = 'create';
-    let tipouser;
-    let nomeazienda;
-    export let form;
-    export let data;
-    
-
-    let error = true;
+/*     let error = true;
 
 
     if (form?.form_error) {
@@ -21,7 +18,7 @@
         nomeazienda = form.form_vals.nomeazienda;
     } */
 
-   export let showModal;
+   export let showModal = false;
     
     function Download() {
         const downloadLink = document.createElement("a");
@@ -30,40 +27,83 @@
       downloadLink.click();
       bool = 1;
     }
+
+
+
+  let name = '';
+  let email = '';
+  export let users = [];
+  let type = '';
+  let nomeAzienda = '';
+  let successMessage = '';
+
+  // Funzione per inviare i dati al database
+  async function submitForm() {
+    try {
+      await addDoc(collection(db, "utenti2"), {
+        name,
+        email,
+        type,
+        nomeAzienda,
+      });
+      successMessage = 'Grazie Curriculum scaricato con successo !';
+      Download();
+      // Pulisci i campi del form
+      name = '';
+      email = '';
+      type = '';
+      nomeAzienda = '';
+    } catch (e) {
+      console.error("Errore durante l'inserimento: ", e);
+    }
+  }
+
+  
     
     </script>
 
     {#if bool == 0}
-        <button on:click={Download}  on:click={()=>showModal = true} >Download</button>
+        <button   on:click={()=>showModal = true} >Download</button>
     {:else if bool == 1 }
         <p>Grazie per il download {now}</p>
     {/if}
 
-<!--     <ModalDownload bind:showModal={showModal} >
-        <form action="?/{action}" method="post">
-            <div class="row">
-                <label for="tipouser">Tipo</label>
-            <select name="tipouser" id="" bind:value={tipouser} >
-                <option value=""></option>
+    <ModalDownload bind:showModal={showModal} >
+        <form on:submit|preventDefault={submitForm}>
+            <div>
+              <label for="name">Nome:</label>
+              <input id="name" bind:value={name} type="text" required />
+            </div>
+          
+            <div>
+              <label for="email">Email:</label>
+              <input id="email" bind:value={email} type="email" required />
+            </div>
+          
+            <div>
+              <label for="option">select an option</label>
+              <select name="" id="" bind:value={type} required>
+                <option value="privato" >privato</option>
                 <option value="azienda">azienda</option>
-                <option value="privato">privato</option>
-            </select>
+              </select>
             </div>
-
-            {#if tipouser == "azienda"}
-            <div class="row">
-                <label for="nomeazienda">Inserire il nome dell'azienda:</label>
-                <input type="text" name="nomeazienda"  autocomplete="off" id="" bind:value={nomeazienda} >
-                <p class={error && nomeazienda?.length == 0 ? '' : 'hidden'}>compila il campo</p>
+          
+            {#if type == 'azienda'}
+            <div>
+              <label for="nomeazienda">Nome dell'azienda</label>
+              <input id="nomeazienda" type="text" bind:value={nomeAzienda} required >
             </div>
-            
-            
             {/if}
-            <button id="modal" type="submit" on:click={Download}>invia e Download</button>
-            
-        </form>
+          
+          
+            <button type="submit">Download</button>
+          </form>
+          
+          {#if successMessage}
+            <p>{successMessage}</p>
+          {/if}
     </ModalDownload>
- -->
+
 
 
     <style>
