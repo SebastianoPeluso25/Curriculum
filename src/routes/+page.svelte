@@ -28,8 +28,8 @@
         </div>
         <div class="testo">
             <span>Torino, Italia</span>
-            <span>+39 3896378322</span>
-            <span ><a href="mailto:sebastianopeluso27@gmail.com">sebastianopeluso27@gmail.com</a></span>
+            <span>+39 </span>
+            <span ><a href="mailto:sebastianopeluso27@gmail.com"></a></span>
         </div>
     </div>
     <div class="box">
@@ -57,12 +57,17 @@
 
     <h2>PRESENTAZIONE</h2>
 
-    <p>Diplomato presso l'Istituto internazionale salesiano Edoardo Agnelli di Torino. contento di avere scelto questo indirizzo. 
-        In particolare sono interessato alla programmazione web con html, css e 
-        javascript e svelte / svelte kit nella creazione di siti web. 
+    <p>
+        Studente presso ITS ICT Mobile App Developer &#128241; | Informatica | Editor Video  &#127916;| Dji mini 2 | Appassionato di televisione &#128250; &#128253; | VIDEO EDITOR | Web Developer 👨‍💻 | Front-end | siti web |
+        <br><br>
+        Diplomato presso l'Istituto Edoardo Agnelli di Torino con articolazione Informatica e telecomunicazione. 
+        Mi piace il mondo della programmazione web con html, css e
+        javascript nella creazione di siti web. 
         Sono un ragazzo solare, molto creativo e mi impegno sempre per portare a 
-        termine i miei progetti. Mi piace il mondo del web-developer / web-designer e ho il desiderio di 
-        imparare e di ampliare le mie esperienze
+        termine i miei progetti. Mi piace il mondo del web-developer / web-designer &#128396; e ho il desiderio di 
+        imparare e di ampliare le mie esperienze.
+        <br><br>
+        E' sono appassionato al mondo del video Editor e alle riprese con droni &#127909;.
     </p>
 </div>
 
