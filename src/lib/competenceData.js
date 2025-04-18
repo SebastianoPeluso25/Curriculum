@@ -1,4 +1,13 @@
-export const bookData = [{
+export const bookData = [
+{
+    "title": "Digital Video",
+    "icon": "Movie",
+},
+{
+    "title": "Video Editor",
+    "icon": "Movie",
+},
+{
     "title": "CSS",
     "icon": "css",
 
@@ -23,14 +32,6 @@ export const bookData = [{
 {
     "title": "Web designer",
     "icon": "Code",
-},
-{
-    "title": "Digital Video",
-    "icon": "Movie",
-},
-{
-    "title": "Video Editor",
-    "icon": "Movie",
 },
 {
     "title": "C#",

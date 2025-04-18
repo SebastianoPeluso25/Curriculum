@@ -4,7 +4,7 @@
 
     let showModal = false;
 
-    let VERSION_SOFTWARE = '2.0';
+    let VERSION_SOFTWARE = '3.0';
     
 </script>
 
@@ -140,10 +140,9 @@
 
     .navbar > .item.active{
         
-        border-right: 4px solid white;
+        border-right: 8px solid white;
         cursor: pointer;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
+
     }
 
 

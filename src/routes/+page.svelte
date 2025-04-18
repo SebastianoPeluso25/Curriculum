@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Protest+Riot&display=swap" rel="stylesheet">
 
 </svelte:head>
 
@@ -39,7 +40,7 @@
             <span class="material-symbols-outlined"></span>
         </div>
         <div class="testo">
-            <span ><a target="_blank" href="https://www.linkedin.com/in/sebastiano-peluso-4101202a8/">Linkedin Profile</a></span>
+            <span ><a target="_blank" href="https://www.linkedin.com/in/sebastiano-peluso">Linkedin Profile</a></span>
             <span><!-- 25 / 02 / 2005 --></span>
             <span></span>
         </div>
@@ -53,6 +54,13 @@
 
 <hr>
 
+<hr>
+<div class="Project">
+    <a href="/project"><div class="my-project">I miei progetti</div></a>
+</div>
+
+<hr>
+
 <div class="presentazione">
 
     <h2>PRESENTAZIONE</h2>
@@ -60,7 +68,7 @@
     <p>
         Studente presso ITS ICT Mobile App Developer &#128241; | Informatica | Editor Video  &#127916;| Dji mini 2 | Appassionato di televisione &#128250; &#128253; | VIDEO EDITOR | Web Developer 👨‍💻 | Front-end | siti web |
         <br><br>
-        Diplomato presso l'Istituto Edoardo Agnelli di Torino con articolazione Informatica e telecomunicazione. 
+        Diplomato con articolazione Informatica e telecomunicazione. 
         Mi piace il mondo della programmazione web con html, css e
         javascript nella creazione di siti web. 
         Sono un ragazzo solare, molto creativo e mi impegno sempre per portare a 
@@ -109,6 +117,38 @@
             
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
+
+
+        .Project{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .Project > a > .my-project{
+            background-color: #014f86;
+            width: max-content;
+            margin: auto;
+            padding: 20px;
+            border-radius: 20px;
+            color: white;
+            font-size: 30px;
+            font-family: "Protest Riot", sans-serif;
+
+        }
+
+        .Project > a{
+            text-decoration: none;
+        }
+
+        .Project > a > .my-project:hover{
+            cursor: pointer;
+        }
+
 
         .CV > h2{
             font-size: 20px;
@@ -241,6 +281,36 @@
         
         
     }
+
+        .Project{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .Project > a > .my-project{
+            background-color: #014f86;
+            width: max-content;
+            margin: auto;
+            padding: 15px;
+            border-radius: 20px;
+            color: white;
+            font-size: 24px;
+            font-family: "Protest Riot", sans-serif;
+
+        }
+
+        .Project > a{
+            text-decoration: none;
+        }
+
+        .Project > a > .my-project:hover{
+            cursor: pointer;
+        }
 
     hr{
         background-color: #014f86;
