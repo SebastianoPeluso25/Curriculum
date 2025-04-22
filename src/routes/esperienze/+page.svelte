@@ -89,6 +89,11 @@
         width: 80%;
         margin: auto;
 
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none;    /* Firefox */
+        -ms-user-select: none;     /* Internet Explorer/Edge */
+        user-select: none;         /* Standard */
+
 
         }
 
@@ -146,8 +151,15 @@
     @media(max-width:480px){
 
         .esperienze{
-        width: 80%;
-        margin: auto;
+            width: 80%;
+            margin: auto;
+
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none;    /* Firefox */
+            -ms-user-select: none;     /* Internet Explorer/Edge */
+            user-select: none;         /* Standard */
+
+
         }
 
         .esperienze > h2{

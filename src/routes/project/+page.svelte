@@ -23,7 +23,7 @@
 
         <div class="box">
             <div class="image">
-                <img src="src\routes\project\mockup.png" alt="mockup">
+                <img src=".\src\routes\project\mockup.png" alt="mockup">
             </div>
             <div class="text">
                 <p>In questo progetto sviluppato durante l'ultimo anno dell'istituto tecnico ho creato un <b> sito web / Web App </b> che parla della storia di tutte le storie di mafia che ho potuto studiare negli anni</p>
@@ -42,7 +42,7 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/g2s-12ZI9dI?si=HwrkPGr7whq8dhAa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="text">
-                <p>Ho effettuato riprese video con un drone DJI mini 2 ed ho effettuato il montaggio dei video</p>
+                <p>Ho effettuato riprese video con un drone DJI mini 2 ed ho effettuato il montaggio dei</p>
                 <div class="tags">
                     <div class="chip">Video Editor</div>
                     <div class="chip">Riprese con Drone</div>
