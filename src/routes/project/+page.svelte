@@ -1,4 +1,5 @@
 <script>
+    import MockUp from '../project/mockup.png'
 
 </script>
 
@@ -23,7 +24,7 @@
 
         <div class="box">
             <div class="image">
-                <img src=".\src\routes\project\mockup.png" alt="mockup">
+                <img src={MockUp} alt="mockup">
             </div>
             <div class="text">
                 <p>In questo progetto sviluppato durante l'ultimo anno dell'istituto tecnico ho creato un <b> sito web / Web App </b> che parla della storia di tutte le storie di mafia che ho potuto studiare negli anni</p>
