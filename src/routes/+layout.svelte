@@ -2,9 +2,11 @@
 
     import Modal from "../lib/components/search_competence/modal.svelte";
 
+    import Logo from "../routes/img/logoBar.png";
+
     let showModal = false;
 
-    let VERSION_SOFTWARE = '3.0';
+    let VERSION_SOFTWARE = '4.0';
     
 </script>
 
@@ -64,8 +66,8 @@
 <div class="container">
     <div class="left">
         <div class="navbar">
-            <div class="name">
-                <h1>Sebastiano Peluso</h1>
+            <div class="Logo">
+                <img src={Logo} alt="logo">
             </div>
             <div  class="item active ">
                 <span class="material-symbols-outlined">
@@ -185,11 +187,17 @@
 
     }
 
-    .container > .left > .navbar > .name{
+    .Logo > img{
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .container > .left > .navbar > .Logo{
         color: white;
         text-align: center;
         margin: auto;
-        width: 50%;
+        width: 80%;
+        padding: 10px;
         
 
     }
