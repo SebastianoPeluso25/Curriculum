@@ -1,10 +1,18 @@
 
 
 /* import Database from "better-sqlite3";
-
 const db = new Database('data.db', {verbose: console.log}); */
 
+import { goto } from '$app/navigation';
+
 let date = new Date();
+
+
+
+let email = '';
+let password = '';
+let error = '';
+let user = null;
 
 
 export function load({params}) {
@@ -13,34 +21,45 @@ export function load({params}) {
     
 }
 
-/* export const actions={
-    create: async({cookies, request})=>{
-        const data = await request.formData();
-        console.log("create action");
-        console.log("i valori sono", data);
 
-        const query2 = db.prepare("INSERT INTO utenti(user,nomeAzienda,data) VALUES(@tipouser,@nomeazienda,datetime('now','localtime'))");
-        
-        const user = {
-            tipouser: data.get("tipouser"),
-            nomeazienda: data.get("nomeazienda"),
-            
+// +page.server.js
+export const actions = {
+  default: async ({ request }) => {
+    const formData = await request.formData();
+    const name = formData.get('name');
+    const email = formData.get('email');
+
+    console.log(name + email);
+
+    try {
+      const response = await fetch('http://192.168.1.199/xampp-api/inserisci.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email })
+      });
+
+      if (!response.ok) {
+        return {
+          status: response.status,
+          error: new Error('Errore nella richiesta al server')
+        };
+      }
+
+      const result = await response.json();
+      const fileId = result.file_id;
+
+      // Reindirizza al download del file
+      return {
+        status: 302,
+        headers: {
+          Location: `http://192.168.1.199/xampp-api/download.php?id=${fileId}`
         }
-
-        
-
-        if (user.tipouser) {
-            const res2 =query2.run({
-                tipouser: user.tipouser,
-                nomeazienda: user.nomeazienda,
-                
-            });
-        }else{
-            return{
-                form_error: true,
-                form_vals: user
-            }
-        }
-
+      };
+    } catch (err) {
+      return {
+        status: 500,
+        error: new Error('Errore di connessione al server')
+      };
     }
-} */
+  }
+};

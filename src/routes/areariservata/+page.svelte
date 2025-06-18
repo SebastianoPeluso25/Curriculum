@@ -1,20 +1,22 @@
 <script>
 
     import { onMount } from 'svelte';
-    import { db, auth } from "../../lib/firebase.js";
-    import { collection, addDoc, query, onSnapshot } from "firebase/firestore";
 
-    let users = [];
+    /** FIREBASE */
+  //   import { db, auth } from "../../lib/firebase.js";
+  //   import { collection, addDoc, query, onSnapshot } from "firebase/firestore";
 
-    // Funzione per recuperare i dati in tempo reale
-  onMount(() => {
-    const q = query(collection(db, "utenti2"));
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      users = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-    });
+  //   let users = [];
 
-    return () => unsubscribe(); // Pulisce il listener quando il componente viene distrutto
-  });
+  //   // Funzione per recuperare i dati in tempo reale
+  // onMount(() => {
+  //   const q = query(collection(db, "utenti2"));
+  //   const unsubscribe = onSnapshot(q, (snapshot) => {
+  //     users = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  //   });
+
+  //   return () => unsubscribe(); // Pulisce il listener quando il componente viene distrutto
+  // });
 
 
 
@@ -27,8 +29,63 @@
   let email = '';
   let password = '';
   let error = '';
+  let user = null;
 
+  // Carica utente da localStorage (se presente)
+  onMount(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      user = JSON.parse(storedUser);
+      loadUsers(); // carica utenti se loggato
+    }
+  });
+
+  // Login con fetch verso login.php
   const login = async () => {
+    try {
+      const res = await fetch('http://192.168.1.199/xampp-api/login.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        localStorage.setItem('user', JSON.stringify(data));
+        user = data;
+        email = '';
+        password = '';
+        error = '';
+        loadUsers(); // carica utenti
+      } else {
+        error = 'Credenziali errate';
+      }
+    } catch (err) {
+      error = 'Errore di rete o server';
+      console.error(err);
+    }
+  };
+
+  const logout = () => {
+    localStorage.removeItem('user');
+    user = null;
+    goto('/areariservata');
+  };
+
+  // Lista utenti che hanno scaricato il file (presumo da un endpoint PHP)
+  let users = [];
+
+  async function loadUsers() {
+    try {
+      const res = await fetch('http://192.168.1.199/xampp-api/lista_utenti.php');
+      users = await res.json();
+    } catch (err) {
+      console.error('Errore nel caricamento utenti:', err);
+    }
+  }
+
+  /* const login = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       goto('/areariservata'); // Reindirizza alla home page dopo il login
@@ -49,7 +106,9 @@
   const logout = async () => {
     await signOut(auth);
     goto('/areariservata'); // Reindirizza alla pagina di login dopo il logout
-  };
+  }; */
+
+
 
 </script>
 

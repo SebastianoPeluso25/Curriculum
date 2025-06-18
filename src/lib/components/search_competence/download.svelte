@@ -36,7 +36,42 @@
   let type = '';
   let nomeAzienda = '';
   let successMessage = '';
+ 
+  async function submitForm() {
 
+  try {
+    const response = await fetch("http://192.168.1.199/xampp-api/inserisci.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        type,
+        nomeAzienda
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error("Errore dal server");
+    }
+
+    const result = await response.json();
+    successMessage = 'Grazie! CV scaricato con successo !';
+    Download();
+
+    // Reset campi form
+    name = '';
+    email = '';
+    type = '';
+    nomeAzienda = '';
+  } catch (e) {
+    console.error("Errore durante l'invio: ", e);
+  }
+}
+
+  /*
   // Funzione per inviare i dati al database
   async function submitForm() {
     try {
@@ -56,7 +91,7 @@
     } catch (e) {
       console.error("Errore durante l'inserimento: ", e);
     }
-  }
+  }*/
 
   
     
