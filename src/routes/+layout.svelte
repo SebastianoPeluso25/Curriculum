@@ -6,7 +6,7 @@
 
     let showModal = false;
 
-    let VERSION_SOFTWARE = '6.1';
+    let VERSION_SOFTWARE = '6.2';
     
 </script>
 

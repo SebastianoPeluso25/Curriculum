@@ -168,6 +168,12 @@
         .project-page > .layout{
             display: flex;
             flex-direction: column;
+
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none;    /* Firefox */
+            -ms-user-select: none;     /* Internet Explorer/Edge */
+            user-select: none;         /* Standard */
+
         }
 
         .image > img{
@@ -286,8 +292,14 @@
         }
 
         .project-page > .layout{
-        display: flex;
-        flex-direction: column;
+            display: flex;
+            flex-direction: column;
+
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none;    /* Firefox */
+            -ms-user-select: none;     /* Internet Explorer/Edge */
+            user-select: none;         /* Standard */
+
         }
 
         .image > img{
