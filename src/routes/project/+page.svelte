@@ -1,5 +1,6 @@
 <script>
     import MockUp from '../project/mockup.png'
+    import Mockup_Infinito from '../project/mockup_app_infinito.png'
 
 </script>
 
@@ -21,6 +22,23 @@
     <h2>I MIEI PROGETTI </h2>
 
     <div class="layout">
+
+        <div class="box reverse">
+            <div class="image">
+                <img src={Mockup_Infinito} alt="mockup">
+            </div>
+            <div class="text">
+                <p>In questo progetto svolto durante il mio percorso di studi in ITS ho partecipato insieme al mio team nello sviluppo di un'applicazione del planetario di torino. </p>
+                <div class="tags">
+                    <div class="chip">Android</div>
+                    <div class="chip">Kotlin</div>
+                    <div class="chip">Mobile Developer</div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
 
         <div class="box">
             <div class="image">
@@ -50,9 +68,6 @@
                     <div class="chip">Dji mini 2</div>
                 </div>
             </div>
-        </div>
-        <div class="box">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Sq0kLvZjgcA?si=aUVHZk9Cu5PNZcxi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
     </div>
