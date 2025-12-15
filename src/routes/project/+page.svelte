@@ -58,7 +58,7 @@
 
         <div class="box reverse ">
             <div class="image">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/g2s-12ZI9dI?si=HwrkPGr7whq8dhAa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/PrjWJGPTbNY?si=LYbedT6awpL2Tivh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="text">
                 <p>Ho effettuato riprese video con un drone DJI mini 2 ed ho effettuato il montaggio dei</p>
