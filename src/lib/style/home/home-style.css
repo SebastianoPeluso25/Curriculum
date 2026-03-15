@@ -1,0 +1,268 @@
+@media (min-width: 480px) {
+    .CV {
+      width: 80%;
+      margin: auto;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+
+    .Project {
+      width: 80%;
+      margin: auto;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .Project > a > .my-project {
+      background-color: #014f86;
+      width: max-content;
+      margin: auto;
+      padding: 20px;
+      border-radius: 20px;
+      color: white;
+      font-size: 30px;
+      font-family: "Protest Riot", sans-serif;
+    }
+
+    .Project > a {
+      text-decoration: none;
+    }
+
+    .Project > a > .my-project:hover {
+      cursor: pointer;
+    }
+
+    .CV > h2 {
+      font-size: 20px;
+    }
+
+    .data {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .data > .box {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      column-gap: 20px;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+    }
+
+    .box > .testo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 10px;
+    }
+
+    .box > .testo > span > a {
+      text-decoration: none;
+    }
+
+    .box > .icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 10px;
+    }
+
+    .presentazione {
+      width: 80%;
+      margin: auto;
+      padding: 10px;
+
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Standard */
+    }
+
+    .formazione {
+      width: 80%;
+      margin: auto;
+      padding: 10px;
+    }
+
+    .presentazione > p {
+      text-align: justify;
+      font-size: 20px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      background-size: contain;
+    }
+
+    hr {
+      background-color: #014f86;
+      padding: 2px;
+      width: 90%;
+    }
+
+    .fa {
+      font-size: 25px;
+    }
+
+    .item > h3 {
+      font-size: 20px;
+    }
+
+    .item > h3 > .material-symbols-outlined {
+      color: gold;
+      font-weight: bolder;
+    }
+
+    .item > p {
+      font-size: 20px;
+    }
+  }
+
+  /**MOBILE*/
+
+  @media (max-width: 480px) {
+    .CV {
+      width: 80%;
+      margin: auto;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+
+    .CV > h2 {
+      font-size: 20px;
+    }
+
+    .data {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      padding: 10px;
+      row-gap: 10px;
+    }
+
+    .Project {
+      width: 80%;
+      margin: auto;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .Project > a > .my-project {
+      background-color: #014f86;
+      width: max-content;
+      margin: auto;
+      padding: 15px;
+      border-radius: 20px;
+      color: white;
+      font-size: 24px;
+      font-family: "Protest Riot", sans-serif;
+    }
+
+    .Project > a {
+      text-decoration: none;
+    }
+
+    .Project > a > .my-project:hover {
+      cursor: pointer;
+    }
+
+    hr {
+      background-color: #014f86;
+      padding: 2px;
+      width: 90%;
+    }
+
+    .data > .box {
+      display: flex;
+      flex-direction: row;
+      width: 80%;
+      column-gap: 4px;
+      justify-content: center;
+      align-content: center;
+      margin: auto;
+    }
+
+    .box > .testo {
+      display: flex;
+      width: 100%;
+      font-size: 18px;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 10px;
+    }
+
+    .box > .testo > span > a {
+      text-decoration: none;
+    }
+
+    .box > .icon {
+      display: flex;
+      font-size: 40px;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 14px;
+    }
+
+    .presentazione {
+      width: 90%;
+      margin: auto;
+      padding: 8px;
+
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Standard */
+    }
+
+    .presentazione > h2 {
+      text-align: justify;
+
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+
+    .presentazione > p {
+      text-align: justify;
+      font-size: 18px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .fa {
+      font-size: 25px;
+    }
+
+    .formazione {
+      width: 80%;
+      margin: auto;
+      padding: 10px;
+    }
+
+    .item > h3 {
+      font-size: 22px;
+    }
+
+    .item > h3 > .material-symbols-outlined {
+      color: gold;
+      font-weight: bolder;
+    }
+
+    .item > p {
+      font-size: 20px;
+    }
+  }

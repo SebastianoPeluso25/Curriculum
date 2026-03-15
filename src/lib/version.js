@@ -1,0 +1,1 @@
+export const VERSION_SOFTWARE = '6.4.2';
