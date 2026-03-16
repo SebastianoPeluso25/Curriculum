@@ -2,11 +2,9 @@
   import Modal from "$lib/components/search_competence/modal.svelte";
   import Logo from "../routes/img/logoBar.png";
   import { VERSION_SOFTWARE } from "$lib/version.js";
-  import { page } from '$app/stores'
-
+  import { page } from "$app/stores";
 
   let showModal = false;
-
 </script>
 
 <svelte:head
@@ -27,19 +25,30 @@
   <!--navbar left mobile version-->
   <Modal bind:showModal>
     <div class="navbar">
-    <div class="menu">
-      <div class="item">
-        <span class="material-symbols-outlined"> person </span>
-        <a href="/">Chi sono</a>
-      </div>
-      <div class="item">
-        <a href="/competenze/">Competenze</a>
-      </div>
-      <div class="item">
-        <span class="material-symbols-outlined"> work </span>
-        <a href="/esperienze/">Esperienze</a>
-      </div>
-      <footer><p>v {VERSION_SOFTWARE}</p></footer>
+      <div class="menu">
+        <div class="item">
+          <div class="icon">
+            <span class="material-symbols-outlined"> person </span>
+          </div>
+          <a href="/">Chi sono</a>
+        </div>
+        <div class="item">
+        <div class="icon">
+            <span class="material-symbols-outlined"> </span>
+          </div>
+          <a href="/competenze/">Competenze</a>
+        </div>
+        <div class="item">
+          <div class="icon">
+            <span class="material-symbols-outlined"> work </span>
+          </div>
+          <a href="/esperienze/">Esperienze</a>
+        </div>
+        <footer>
+          <div class="chip">
+            v {VERSION_SOFTWARE}
+          </div>
+        </footer>
       </div>
     </div>
   </Modal>
@@ -58,33 +67,31 @@
         <img src={Logo} alt="logo" />
       </div>
       <div class="menu">
-      <div class="item" class:active={$page.url.pathname === "/"}>
-        <div class="icon">
+        <div class="item" class:active={$page.url.pathname === "/"}>
+          <div class="icon">
             <span class="material-symbols-outlined"> person </span>
+          </div>
+          <a href="/">Chi sono</a>
         </div>
-        <a href="/">Chi sono</a>
-      </div>
-      <div class="item" class:active={$page.url.pathname === "/competenze"}>
-        <div class="icon">
-          <span class="material-symbols-outlined"> </span>
+        <div class="item" class:active={$page.url.pathname === "/competenze"}>
+          <div class="icon">
+            <span class="material-symbols-outlined"> </span>
+          </div>
+          <a href="/competenze/">Competenze</a>
         </div>
-        <a href="/competenze/">Competenze</a>
-      </div>
-      <div class="item" class:active={$page.url.pathname === "/esperienze"}>
-      <div class="icon">
-          <span class="material-symbols-outlined"> work </span>
+        <div class="item" class:active={$page.url.pathname === "/esperienze"}>
+          <div class="icon">
+            <span class="material-symbols-outlined"> work </span>
+          </div>
+          <a href="/esperienze/">Esperienze</a>
         </div>
-        <a href="/esperienze/">Esperienze</a>
-      </div>
       </div>
 
-      
-        <footer>
+      <footer>
         <div class="chip">
           v {VERSION_SOFTWARE}
-          </div>
-        </footer>
-      
+        </div>
+      </footer>
     </div>
   </div>
 
@@ -97,246 +104,257 @@
 
 <style>
   :global(body) {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-
-@media(min-width: 480px) {
-  .navbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: auto;
-    position: fixed;
-    overflow: auto;
-    row-gap: 8px;
-    height: 100vh;
-    margin: auto;
-  }
-
-  .container2 {
-    display: none;
-  }
-
-  .menu>.item>a {
-    text-decoration: none;
-    color: white;
-  }
-
-  .menu {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1;
-}
-
-
-  .navbar>footer {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  footer > .chip{
-    padding: 4px;
-    width: max-content;
-    height: max-content;
-    background-color: aquamarine;
-    border-radius: 10px;
-    font-weight: bold;
-    color: #014f86;
-    font-size: 16px;
-    margin: 10px;
-  }
-
-  .menu > .item {
-  display: grid;
-  grid-template-columns: 30px 1fr;
-  margin-left: 10px;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 20px;
-  font-size: 16px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #ffffff;
-  border-radius: 6px 0 0 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, border 0.2s ease;
-}
-
-/* Hover normale */
-.menu > .item:hover {
-  background-color: #2a6f97;
-}
-
-/* Item attivo */
-.menu > .item.active {
-  background-color: #468faf;
-  border-right: 6px solid #ffffff;
-}
-
-/* Hover su item attivo */
-.menu > .item.active:hover {
-  background-color: #2a6f97;
-}
-
-  .container {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    height: 100vmin;
-  }
-
-  .container>.left {
-    display: flex;
+    padding: 0;
+    margin: 0;
     width: 100%;
-    flex-direction: column;
-    row-gap: 30px;
-    align-items: center;
-    background-color: #014f86;
   }
 
-  .Logo>img {
-    width: 100%;
-    border-radius: 10px;
+  @media (min-width: 480px) {
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: auto;
+      position: fixed;
+      overflow: auto;
+      row-gap: 8px;
+      height: 100vh;
+      margin: auto;
+    }
+
+    .container2 {
+      display: none;
+    }
+
+    .menu > .item > a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .navbar > footer {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    footer > .chip {
+      padding: 4px;
+      width: max-content;
+      height: max-content;
+      background-color: aquamarine;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #014f86;
+      font-size: 16px;
+      margin: 10px;
+    }
+
+    .menu > .item {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      margin-left: 10px;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      font-size: 16px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: #ffffff;
+      border-radius: 6px 0 0 6px;
+      cursor: pointer;
+      transition:
+        background-color 0.2s ease,
+        border 0.2s ease;
+    }
+
+    /* Hover normale */
+    .menu > .item:hover {
+      background-color: #2a6f97;
+    }
+
+    /* Item attivo */
+    .menu > .item.active {
+      background-color: #468faf;
+      border-right: 6px solid #ffffff;
+    }
+
+    /* Hover su item attivo */
+    .menu > .item.active:hover {
+      background-color: #2a6f97;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+      height: 100vmin;
+    }
+
+    .container > .left {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      row-gap: 30px;
+      align-items: center;
+      background-color: #014f86;
+    }
+
+    .Logo > img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .container > .left > .navbar > .Logo {
+      color: white;
+      text-align: center;
+      margin: auto;
+      width: 80%;
+      padding: 10px;
+    }
+
+    .container > .right > .containerRight {
+      width: 95%;
+      border: 1px solid black;
+      box-shadow: 1px 1px 6px 2px #014f86;
+      margin: 14px;
+    }
+
+    .container > .right {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: start;
+    }
   }
 
-  .container>.left>.navbar>.Logo {
-    color: white;
-    text-align: center;
-    margin: auto;
-    width: 80%;
-    padding: 10px;
+  /**MOBILE VERSION*/
+
+  @media (max-width: 480px) {
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background-color: #014f86;
+      row-gap: 8px;
+      border-radius: 20px;
+    }
+
+    .container2 {
+      display: grid;
+      grid-template-rows: 0.5fr 4fr;
+      height: 100vmax;
+      width: 100%;
+      margin: auto;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .container2 > button {
+      width: 100%;
+      margin: auto;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      border: none;
+      background-color: #014f86;
+      border-radius: 8px;
+      color: white;
+    }
+
+    footer > .chip {
+      padding: 4px;
+      width: max-content;
+      height: max-content;
+      background-color: aquamarine;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #014f86;
+      font-size: 16px;
+      margin: 10px;
+    }
+
+    .container2 > button > .material-symbols-outlined {
+      font-size: 60px;
+      border: none;
+      background-color: #014f86;
+      border-radius: 8px;
+      color: white;
+    }
+
+    .container2 > .right > .containerRight {
+      width: 95%;
+      border: 1px solid black;
+      box-shadow: 1px 1px 6px 2px #014f86;
+      margin: 14px;
+      height: min-content;
+    }
+
+    .container2 > .right {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: start;
+    }
+
+    .menu > .item > a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .menu > footer {
+      text-align: center;
+      color: white;
+    }
+
+    .menu > .item {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: 10px 2fr;
+      margin-left: 10px;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      font-size: 16px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: white;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .container {
+      display: none;
+      grid-template-columns: 1fr 3fr;
+      height: 100vmax;
+    }
+
+    .container > .left {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      row-gap: 30px;
+      align-items: center;
+      background-color: #014f86;
+    }
+
+    .container > .right > .containerRight {
+      width: 95%;
+      border: 1px solid black;
+      box-shadow: 1px 1px 6px 2px #014f86;
+      margin-top: 5%;
+      height: 10vh;
+    }
+
+    .container > .right {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: start;
+    }
   }
-
-  .container>.right>.containerRight {
-    width: 95%;
-    border: 1px solid black;
-    box-shadow: 1px 1px 6px 2px #014f86;
-    margin: 14px;
-  }
-
-  .container>.right {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: start;
-  }
-}
-
-/**MOBILE VERSION*/
-
-@media(max-width: 480px) {
-  .navbar {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: #014f86;
-    row-gap: 8px;
-  }
-
-  .container2 {
-    display: grid;
-    grid-template-rows: 0.5fr 4fr;
-    height: 100vmax;
-    width: 100%;
-    margin: auto;
-  }
-
-  
-  .menu {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1;
-}
-
-
-  .container2>button {
-    width: 100%;
-    margin: auto;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border: none;
-    background-color: #014f86;
-    border-radius: 8px;
-    color: white;
-  }
-
-  .container2>button>.material-symbols-outlined {
-    font-size: 60px;
-    border: none;
-    background-color: #014f86;
-    border-radius: 8px;
-    color: white;
-  }
-
-  .container2>.right>.containerRight {
-    width: 95%;
-    border: 1px solid black;
-    box-shadow: 1px 1px 6px 2px #014f86;
-    margin: 14px;
-    height: min-content;
-  }
-
-  .container2>.right {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: start;
-  }
-
-  .menu>.item>a {
-    text-decoration: none;
-    color: white;
-  }
-
-  .menu>footer {
-    text-align: center;
-    color: white;
-  }
-
-  .menu>.item {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-    column-gap: 10px;
-    padding: 18px;
-    justify-content: center;
-    font-size: 20px;
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-
-  .container {
-    display: none;
-    grid-template-columns: 1fr 3fr;
-    height: 100vmax;
-  }
-
-  .container>.left {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    row-gap: 30px;
-    align-items: center;
-    background-color: #014f86;
-  }
-
-  .container>.right>.containerRight {
-    width: 95%;
-    border: 1px solid black;
-    box-shadow: 1px 1px 6px 2px #014f86;
-    margin-top: 5%;
-    height: 10vh;
-  }
-
-  .container>.right {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: start;
-  }
-}
-
 </style>
