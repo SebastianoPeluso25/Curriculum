@@ -3,6 +3,8 @@
   import Modal2 from "../lib/components/search_competence/modalDownload.svelte";
   import URL_cv from "$lib/Curriculum_Vitae_Sebastiano_Peluso.pdf";
   import "../lib/style/home/home-style.css";
+  import SocialIcons from "@rodneylab/svelte-social-icons";
+  import { MapPin, Mail, Phone, Cake } from "lucide-svelte";
 
   //let URL_cv = "./static/Curriculum_Vitae_Sebastiano_Peluso.pdf";
   let Cv = "Curriculum_Vitae_Sebastiano_Peluso.pdf";
@@ -30,32 +32,51 @@
 </svelte:head>
 
 <div class="data">
-  <div class="box">
-    <div class="icon">
-      <span class="material-symbols-outlined">location_on</span>
-      <span class="material-symbols-outlined">call</span>
-      <span class="material-symbols-outlined">mail</span>
+  <div class="container">
+
+    <div class="item">
+      <div class="icon">
+        <MapPin />
+      </div>
+      <div class="text">
+        <span>Torino, Italia</span>
+      </div>
     </div>
-    <div class="testo">
-      <span>Torino, Italia</span>
-      <span>+39 </span>
-      <span><a href="mailto:sebastianopeluso27@gmail.com"></a></span>
+
+    <div class="item">
+      <div class="icon">
+        <Phone />
+      </div>
+      <div class="text">
+        <span>+39 </span>
+      </div>
     </div>
+
+    <div class="item">
+      <div class="icon">
+        <Mail />
+      </div>
+      <div class="text">
+        <span></span>
+      </div>
+    </div>
+
   </div>
-  <div class="box">
-    <div class="icon">
-      <span class="fa fa-linkedin-square"></span>
-      <span class="fa fa-birthday-cake"></span>
-      <span class="material-symbols-outlined"></span>
+
+  <div class="container">
+    <div class="item">
+      <div class="icon">
+        <a target="_blank" href="https://www.linkedin.com/in/sebastiano-peluso">
+          <SocialIcons network="linkedin" />
+        </a>
+      </div>
+      <div class="text"></div>
     </div>
-    <div class="testo">
-      <span
-        ><a target="_blank" href="https://www.linkedin.com/in/sebastiano-peluso"
-          >Linkedin Profile</a
-        ></span
-      >
-      <span><!-- 25 / 02 / 2005 --></span>
-      <span></span>
+    <div class="item">
+      <div class="icon">
+        <Cake />
+      </div>
+      <div class="text"></div>
     </div>
   </div>
 </div>
@@ -108,7 +129,3 @@
 </div>
 
 <hr />
-
-<style>
-  
-</style>

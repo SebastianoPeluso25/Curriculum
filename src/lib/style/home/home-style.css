@@ -47,37 +47,31 @@
     .data {
       display: flex;
       flex-direction: row;
-      width: 100%;
-      padding: 20px;
+      justify-content: space-around;
+      padding: 18px;
+      margin: auto;
     }
 
-    .data > .box {
+    .data > .container {
       display: flex;
-      flex-direction: row;
-      width: 100%;
-      column-gap: 20px;
+      flex-direction: column;
+      width: max-content;
+      row-gap: 4px;
       justify-content: center;
       align-items: center;
       align-content: center;
+
     }
 
-    .box > .testo {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      row-gap: 10px;
+    .container > .item{
+      display: grid;
+      align-items: center;
+      width: 100%;
+      column-gap: 4px;
+      grid-template-columns: 30px 1fr;
     }
 
-    .box > .testo > span > a {
-      text-decoration: none;
-    }
 
-    .box > .icon {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      row-gap: 10px;
-    }
 
     .presentazione {
       width: 80%;
@@ -147,10 +141,11 @@
 
     .data {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-content: center;
-      padding: 10px;
-      row-gap: 10px;
+      padding: 18px;
+      margin: auto;
+      width: auto;
     }
 
     .Project {
@@ -188,17 +183,17 @@
       width: 90%;
     }
 
-    .data > .box {
+    .data > .container {
       display: flex;
-      flex-direction: row;
-      width: 80%;
+      flex-direction: column;
+      width: 100%;
       column-gap: 4px;
       justify-content: center;
       align-content: center;
       margin: auto;
     }
 
-    .box > .testo {
+    .container > .item > .text {
       display: flex;
       width: 100%;
       font-size: 18px;
@@ -207,16 +202,17 @@
       row-gap: 10px;
     }
 
-    .box > .testo > span > a {
+    .container > .item > .text > span > a {
       text-decoration: none;
     }
 
-    .box > .icon {
-      display: flex;
-      font-size: 40px;
-      flex-direction: column;
+    .container > .item{
+      display: grid;
+      align-items: center;
+      width: 100%;
+      column-gap: 4px;
+      grid-template-columns: 30px 1fr;
       justify-content: center;
-      row-gap: 14px;
     }
 
     .presentazione {

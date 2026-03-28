@@ -3,6 +3,8 @@
   import Logo from "../routes/img/logoBar.png";
   import { VERSION_SOFTWARE } from "$lib/version.js";
   import { page } from "$app/stores";
+  import { User, Handbag } from "lucide-svelte";
+
 
   let showModal = false;
 </script>
@@ -28,7 +30,7 @@
       <div class="menu">
         <div class="item">
           <div class="icon">
-            <span class="material-symbols-outlined"> person </span>
+            <User />
           </div>
           <a href="/">Chi sono</a>
         </div>
@@ -40,7 +42,7 @@
         </div>
         <div class="item">
           <div class="icon">
-            <span class="material-symbols-outlined"> work </span>
+            <Handbag />
           </div>
           <a href="/esperienze/">Esperienze</a>
         </div>
@@ -69,7 +71,7 @@
       <div class="menu">
         <div class="item" class:active={$page.url.pathname === "/"}>
           <div class="icon">
-            <span class="material-symbols-outlined"> person </span>
+            <User />
           </div>
           <a href="/">Chi sono</a>
         </div>
@@ -81,7 +83,7 @@
         </div>
         <div class="item" class:active={$page.url.pathname === "/esperienze"}>
           <div class="icon">
-            <span class="material-symbols-outlined"> work </span>
+            <Handbag />
           </div>
           <a href="/esperienze/">Esperienze</a>
         </div>
@@ -220,6 +222,7 @@
       width: 95%;
       border: 1px solid black;
       box-shadow: 1px 1px 6px 2px #014f86;
+      border-radius: 20px;
       margin: 14px;
     }
 
@@ -293,6 +296,7 @@
       border: 1px solid black;
       box-shadow: 1px 1px 6px 2px #014f86;
       margin: 14px;
+      border-radius: 20px;
       height: min-content;
     }
 
@@ -340,14 +344,6 @@
       row-gap: 30px;
       align-items: center;
       background-color: #014f86;
-    }
-
-    .container > .right > .containerRight {
-      width: 95%;
-      border: 1px solid black;
-      box-shadow: 1px 1px 6px 2px #014f86;
-      margin-top: 5%;
-      height: 10vh;
     }
 
     .container > .right {
