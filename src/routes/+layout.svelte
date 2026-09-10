@@ -13,6 +13,11 @@
   ><link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
   /></svelte:head
 >
 
@@ -48,6 +53,7 @@
         </div>
         <footer>
           <div class="chip">
+            <span class="dot"></span>
             v {VERSION_SOFTWARE}
           </div>
         </footer>
@@ -91,6 +97,7 @@
 
       <footer>
         <div class="chip">
+          <span class="dot"></span>
           v {VERSION_SOFTWARE}
         </div>
       </footer>
@@ -109,6 +116,7 @@
     padding: 0;
     margin: 0;
     width: 100%;
+    font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   }
 
   @media (min-width: 480px) {
@@ -119,9 +127,12 @@
       width: auto;
       position: fixed;
       overflow: auto;
-      row-gap: 8px;
+      row-gap: 12px;
       height: 100vh;
       margin: auto;
+      background: linear-gradient(165deg, #01477a 0%, #013a63 55%, #012a49 100%);
+      box-shadow: 4px 0 24px rgba(1, 42, 73, 0.35);
+      padding-top: 10px;
     }
 
     .container2 {
@@ -130,14 +141,16 @@
 
     .menu > .item > a {
       text-decoration: none;
-      color: white;
+      color: rgba(255, 255, 255, 0.88);
+      transition: color 0.2s ease;
     }
 
     .menu {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
       flex: 1;
+      padding: 6px 10px 6px 0;
     }
 
     .navbar > footer {
@@ -146,48 +159,102 @@
     }
 
     footer > .chip {
-      padding: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
       width: max-content;
       height: max-content;
-      background-color: aquamarine;
-      border-radius: 10px;
-      font-weight: bold;
-      color: #014f86;
-      font-size: 16px;
-      margin: 10px;
+      background: linear-gradient(135deg, #7fffd4, #5be8c2);
+      border-radius: 999px;
+      font-weight: 600;
+      color: #013a63;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      margin: 14px;
+      box-shadow: 0 2px 10px rgba(127, 255, 212, 0.35);
+    }
+
+    .chip > .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #013a63;
+      display: inline-block;
     }
 
     .menu > .item {
       display: grid;
-      grid-template-columns: 30px 1fr;
+      grid-template-columns: 38px 1fr;
       margin-left: 10px;
       align-items: center;
-      gap: 12px;
-      padding: 16px 20px;
-      font-size: 16px;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      gap: 14px;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 500;
       color: #ffffff;
-      border-radius: 6px 0 0 6px;
+      border-radius: 14px 0 0 14px;
       cursor: pointer;
+      position: relative;
       transition:
-        background-color 0.2s ease,
-        border 0.2s ease;
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .menu > .item > .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.08);
+      transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
     }
 
     /* Hover normale */
     .menu > .item:hover {
-      background-color: #2a6f97;
+      background-color: rgba(255, 255, 255, 0.08);
+      transform: translateX(4px);
+    }
+
+    .menu > .item:hover > .icon {
+      background-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .menu > .item:hover > a {
+      color: #ffffff;
     }
 
     /* Item attivo */
     .menu > .item.active {
-      background-color: #468faf;
-      border-right: 6px solid #ffffff;
+      background: linear-gradient(90deg, rgba(70, 143, 175, 0.9), rgba(70, 143, 175, 0.55));
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .menu > .item.active::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 8px;
+      bottom: 8px;
+      width: 4px;
+      border-radius: 4px;
+      background: #7fffd4;
+      box-shadow: 0 0 10px rgba(127, 255, 212, 0.7);
+    }
+
+    .menu > .item.active > .icon {
+      background-color: rgba(255, 255, 255, 0.22);
     }
 
     /* Hover su item attivo */
     .menu > .item.active:hover {
-      background-color: #2a6f97;
+      background: linear-gradient(90deg, rgba(42, 111, 151, 0.95), rgba(42, 111, 151, 0.6));
+      transform: translateX(0);
     }
 
     .container {
@@ -202,26 +269,27 @@
       flex-direction: column;
       row-gap: 30px;
       align-items: center;
-      background-color: #014f86;
+      background-color: #012a49;
     }
 
     .Logo > img {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     }
 
     .container > .left > .navbar > .Logo {
       color: white;
       text-align: center;
       margin: auto;
-      width: 80%;
-      padding: 10px;
+      width: 78%;
+      padding: 18px 10px 6px;
     }
 
     .container > .right > .containerRight {
       width: 95%;
-      border: 1px solid black;
-      box-shadow: 1px 1px 6px 2px #014f86;
+      border: 1px solid rgba(1, 79, 134, 0.15);
+      box-shadow: 0 4px 24px rgba(1, 79, 134, 0.25);
       border-radius: 20px;
       margin: 14px;
     }
@@ -241,9 +309,10 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      background-color: #014f86;
+      background: linear-gradient(165deg, #01477a 0%, #013a63 55%, #012a49 100%);
       row-gap: 8px;
       border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(1, 42, 73, 0.35);
     }
 
     .container2 {
@@ -259,42 +328,56 @@
       flex-direction: column;
       gap: 8px;
       flex: 1;
+      padding-top: 6px;
     }
 
     .container2 > button {
       width: 100%;
       margin: auto;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
       border: none;
-      background-color: #014f86;
-      border-radius: 8px;
+      background: linear-gradient(135deg, #01477a, #013a63);
+      border-radius: 12px;
       color: white;
     }
 
     footer > .chip {
-      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 12px;
       width: max-content;
       height: max-content;
-      background-color: aquamarine;
-      border-radius: 10px;
-      font-weight: bold;
-      color: #014f86;
-      font-size: 16px;
-      margin: 10px;
+      background: linear-gradient(135deg, #7fffd4, #5be8c2);
+      border-radius: 999px;
+      font-weight: 600;
+      color: #013a63;
+      font-size: 13px;
+      margin: 10px auto;
+      box-shadow: 0 2px 10px rgba(127, 255, 212, 0.35);
+    }
+
+    .chip > .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #013a63;
+      display: inline-block;
     }
 
     .container2 > button > .material-symbols-outlined {
-      font-size: 60px;
+      font-size: 52px;
       border: none;
-      background-color: #014f86;
+      background: transparent;
       border-radius: 8px;
       color: white;
     }
 
     .container2 > .right > .containerRight {
       width: 95%;
-      border: 1px solid black;
-      box-shadow: 1px 1px 6px 2px #014f86;
+      border: 1px solid rgba(1, 79, 134, 0.15);
+      box-shadow: 0 4px 24px rgba(1, 79, 134, 0.25);
       margin: 14px;
       border-radius: 20px;
       height: min-content;
@@ -309,7 +392,7 @@
 
     .menu > .item > a {
       text-decoration: none;
-      color: white;
+      color: rgba(255, 255, 255, 0.92);
     }
 
     .menu > footer {
@@ -320,15 +403,30 @@
     .menu > .item {
       display: grid;
       justify-items: center;
-      grid-template-columns: 10px 2fr;
+      grid-template-columns: 30px 2fr;
       margin-left: 10px;
       align-items: center;
       gap: 12px;
-      padding: 16px 20px;
+      padding: 14px 20px;
       font-size: 16px;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: 500;
       color: white;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      border-radius: 12px;
+      transition: background-color 0.25s ease;
+    }
+
+    .menu > .item > .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .menu > .item:active {
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
     .container {
@@ -343,7 +441,7 @@
       flex-direction: column;
       row-gap: 30px;
       align-items: center;
-      background-color: #014f86;
+      background-color: #012a49;
     }
 
     .container > .right {
