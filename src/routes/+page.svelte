@@ -4,6 +4,7 @@
   import URL_cv from "$lib/Curriculum_Vitae_Sebastiano_Peluso.pdf";
   import SocialIcons from "@rodneylab/svelte-social-icons";
   import { MapPin, Mail, Phone, Cake } from "lucide-svelte";
+  import FloatingAiButton from "$lib/components/FloatingAiButton.svelte";
 
   //let URL_cv = "./static/Curriculum_Vitae_Sebastiano_Peluso.pdf";
   let Cv = "Curriculum_Vitae_Sebastiano_Peluso.pdf";
@@ -148,6 +149,8 @@
     </div>
   </div>
 </div>
+
+<FloatingAiButton />
 
 <style>
   :global(body) {
