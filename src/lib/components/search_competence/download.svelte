@@ -10,14 +10,6 @@
     let bool = 0;
     let now = new Date()
 
-/*     let error = true;
-
-
-    if (form?.form_error) {
-        error = true;
-        nomeazienda = form.form_vals.nomeazienda;
-    } */
-
    export let showModal = false;
     
     function Download() {
@@ -27,8 +19,6 @@
       downloadLink.click();
       bool = 1;
     }
-
-
 
   let name = '';
   let email = '';
@@ -61,7 +51,6 @@
     successMessage = 'Grazie! CV scaricato con successo !';
     Download();
 
-    // Reset campi form
     name = '';
     email = '';
     type = '';
@@ -71,224 +60,339 @@
   }
 }
 
-  /*
-  // Funzione per inviare i dati al database
-  async function submitForm() {
-    try {
-      await addDoc(collection(db, "utenti2"), {
-        name,
-        email,
-        type,
-        nomeAzienda,
-      });
-      successMessage = 'Grazie Curriculum scaricato con successo !';
-      Download();
-      // Pulisci i campi del form
-      name = '';
-      email = '';
-      type = '';
-      nomeAzienda = '';
-    } catch (e) {
-      console.error("Errore durante l'inserimento: ", e);
-    }
-  }*/
-
-  
-    
     </script>
 
     {#if bool == 0}
-        <button   on:click={()=>showModal = true} >Download</button>
+        <button class="download-trigger" on:click={()=>showModal = true}>
+            <span class="material-symbols-outlined">download</span>
+            <span>Scarica CV</span>
+        </button>
     {:else if bool == 1 }
-        <p>Grazie per il download {now}</p>
+        <div class="thanks-box">
+            <span class="material-symbols-outlined">check_circle</span>
+            <p>Grazie per il download!</p>
+        </div>
     {/if}
 
-    <ModalDownload bind:showModal={showModal} >
-        <form on:submit|preventDefault={submitForm}>
-            <div>
-              <label for="name">Nome:</label>
-              <input id="name" bind:value={name} type="text" required />
-            </div>
-          
-            <div>
-              <label for="email">Email:</label>
-              <input id="email" bind:value={email} type="email" required />
-            </div>
-          
-            <div>
-              <label for="option">select an option</label>
-              <select name="" id="" bind:value={type} required>
-                <option value="privato" >privato</option>
-                <option value="azienda">azienda</option>
-              </select>
-            </div>
-          
-            {#if type == 'azienda'}
-            <div>
-              <label for="nomeazienda">Nome dell'azienda</label>
-              <input id="nomeazienda" type="text" bind:value={nomeAzienda} required >
-            </div>
+    <ModalDownload bind:showModal={showModal}>
+        <div class="form-wrapper">
+            <form on:submit|preventDefault={submitForm} class="cv-form">
+                <div class="field">
+                    <label for="name">
+                        <span class="material-symbols-outlined">person</span>
+                        Nome e Cognome
+                    </label>
+                    <input id="name" bind:value={name} type="text" placeholder="Inserisci il tuo nome" required />
+                </div>
+
+                <div class="field">
+                    <label for="email">
+                        <span class="material-symbols-outlined">mail</span>
+                        Indirizzo Email
+                    </label>
+                    <input id="email" bind:value={email} type="email" placeholder="tuo@email.com" required />
+                </div>
+
+                <div class="field">
+                    <label for="type-select">
+                        <span class="material-symbols-outlined">apartment</span>
+                        Sei un privato o un'azienda?
+                    </label>
+                    <div class="select-wrapper">
+                        <select id="type-select" bind:value={type} required>
+                            <option value="" disabled selected>Seleziona un'opzione</option>
+                            <option value="privato">Privato</option>
+                            <option value="azienda">Azienda</option>
+                        </select>
+                        <span class="material-symbols-outlined select-arrow">expand_more</span>
+                    </div>
+                </div>
+
+                {#if type == 'azienda'}
+                <div class="field azienda-field">
+                    <label for="nomeazienda">
+                        <span class="material-symbols-outlined">business</span>
+                        Nome dell'Azienda
+                    </label>
+                    <input id="nomeazienda" type="text" placeholder="Nome della tua azienda" bind:value={nomeAzienda} required />
+                </div>
+                {/if}
+
+                <button type="submit" class="submit-btn">
+                    <span class="material-symbols-outlined">download</span>
+                    Scarica il CV
+                </button>
+            </form>
+
+            {#if successMessage}
+                <div class="success-msg">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    <p>{successMessage}</p>
+                </div>
             {/if}
-          
-          
-            <button type="submit">Download</button>
-          </form>
-          
-          {#if successMessage}
-            <p>{successMessage}</p>
-          {/if}
+        </div>
     </ModalDownload>
 
-
+    <svelte:head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+    </svelte:head>
 
     <style>
-
-        @media(min-width:480px){
-            form{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                row-gap: 10px;
-            }
-
-            .hidden{
-                display: none;
-            }
-
-            form > .row > input{
-            padding: 8px;
-            font-size: 20px;
-            }
-
-            form > .row > label{
-                
-                font-size: 20px;
-            }
-
-            form > .row > p{
-                color: red;
-                font: bold;
-            }
-
-            form > button{
-                padding: 10px;
-                font-size: 24px;
-            }
-            form > .row{
-                width: 100%;
-                column-gap: 10px;
-            }
-
-            form > .row > select{
-                width: 30%;
-                padding: 8px;
-                font-size: 20px;
-            }
-
-
-            button{
-            text-align: center;
-            padding: 8px;
+        .download-trigger {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
             border: none;
-            border-radius: 4px;
-            width: 30%;
-            background-color: #014f86;
+            border-radius: 16px;
+            background: linear-gradient(120deg, #01477a, #468faf);
             color: white;
-            background-size: contain;
-            margin: auto;
-            
-
-        }
-
-        button:hover{
+            font-family: "Poppins", sans-serif;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
-        }
+            box-shadow: 0 6px 20px rgba(1, 71, 122, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        @media(max-width:480px){
-            button{
-            text-align: center;
-            padding: 8px;
+        .download-trigger .material-symbols-outlined {
+            font-size: 22px;
+        }
+
+        .download-trigger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(1, 71, 122, 0.4);
+        }
+
+        .download-trigger:active {
+            transform: translateY(0);
+        }
+
+        .thanks-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 22px;
+            background: #eaf5fa;
+            border: 1.5px solid #b9d9e8;
+            border-radius: 16px;
+            color: #013a63;
+        }
+
+        .thanks-box .material-symbols-outlined {
+            color: #0ea570;
+            font-size: 24px;
+        }
+
+        .thanks-box p {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-wrapper {
+            padding: 24px 26px 26px 26px;
+        }
+
+        .cv-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .field label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: "Poppins", sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: #013a63;
+            letter-spacing: 0.01em;
+        }
+
+        .field label .material-symbols-outlined {
+            font-size: 18px;
+            color: #468faf;
+        }
+
+        .field input,
+        .select-wrapper select {
+            width: 100%;
+            padding: 13px 14px;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            color: #2c3e50;
+            background: #f5fafd;
+            border: 1.5px solid #d4eaf5;
+            border-radius: 12px;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .field input::placeholder {
+            color: #8faabe;
+        }
+
+        .field input:focus,
+        .select-wrapper select:focus {
+            border-color: #468faf;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(70, 143, 175, 0.14);
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+            padding-right: 44px;
+        }
+
+        .select-wrapper .select-arrow {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #468faf;
+            font-size: 20px;
+            pointer-events: none;
+            transition: transform 0.2s ease;
+        }
+
+        .select-wrapper select:focus ~ .select-arrow {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .select-wrapper select option {
+            color: #2c3e50;
+        }
+
+        .azienda-field {
+            animation: slideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .submit-btn {
+            margin-top: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 22px;
             border: none;
-            border-radius: 4px;
-            width: 40%;
-            background-color: #014f86;
+            border-radius: 14px;
+            background: linear-gradient(120deg, #01477a 0%, #013a63 50%, #014f86 100%);
             color: white;
-            background-size: contain;
-            margin: auto;
-            
-
-        }
-
-
-        form > button{
-            width: 60%;
-            padding: 10px;
-            font-size: 20px;
-        }
-
-        form > .row > input{
-            padding: 8px;
-            font-size: 20px;
-        }
-
-        form > .row > label{
-            
-            font-size: 20px;
-        }
-
-            .hidden{
-                display: none;
-            }
-
-            form > .row > p{
-                color: red;
-                font: bold;
-            }
-
-            form > .row{
-                width: 100%;
-                column-gap: 10px;
-            }
-
-            form > .row{
-                padding: 10px;
-            }
-
-            form > .row > select{
-                width: 50%;
-                padding: 8px;
-                text-align: center;
-                font-size: 20px;
-            }
-
-        form{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                row-gap: 10px;
-                margin: auto;
-            }
-
-
-
-            form > select{
-                width: 50%;
-                text-align: center;
-                padding: 8px;
-                font-size: 20px;
-            }
-
-        
-        button:hover{
+            font-family: "Poppins", sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
             cursor: pointer;
-        }
+            box-shadow:
+                0 6px 22px rgba(1, 58, 99, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            overflow: hidden;
         }
 
+        .submit-btn::before {
+            content: "";
+            position: absolute;
+            inset: -50%;
+            background: radial-gradient(
+                circle,
+                rgba(127, 255, 212, 0.25) 0%,
+                transparent 60%
+            );
+            opacity: 0;
+            transition: opacity 0.35s;
+        }
 
+        .submit-btn:hover::before {
+            opacity: 1;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 10px 30px rgba(1, 58, 99, 0.42),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn .material-symbols-outlined {
+            font-size: 22px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .success-msg {
+            margin-top: 18px;
+            padding: 14px 16px;
+            background: #e6f7ef;
+            border: 1.5px solid #9ddfc0;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideDown 0.3s ease;
+        }
+
+        .success-msg .material-symbols-outlined {
+            font-size: 24px;
+            color: #0ea570;
+            flex-shrink: 0;
+        }
+
+        .success-msg p {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #065f46;
+        }
+
+        @media (max-width: 480px) {
+            .form-wrapper {
+                padding: 20px 18px 22px 18px;
+            }
+
+            .download-trigger {
+                padding: 12px 22px;
+                font-size: 15px;
+            }
+
+            .submit-btn {
+                padding: 14px 20px;
+                font-size: 14.5px;
+            }
+        }
     </style>
-
-    
-    
-    
-    
