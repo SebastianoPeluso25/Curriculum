@@ -325,6 +325,7 @@
     line-height: 1.7;
     font-size: 15px;
     margin: 0;
+    user-select: none;
   }
 
   /* Formazione */
