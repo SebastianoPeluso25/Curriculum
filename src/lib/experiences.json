@@ -1,0 +1,93 @@
+[
+  {
+    "date": "Dicembre 2026 – Maggio 2026",
+    "dateRange": [2026, 5],
+    "title": "Stagista Sviluppatore Flutter Junior - InsideApp srl",
+    "descFile": "stage-insideapp.md",
+    "tag": "Stage / Azienda",
+    "icon": "Building2",
+    "color": "#1d4ed8",
+    "category": "lavoro"
+  },
+  {
+    "date": "Marzo 2024",
+    "dateRange": [2024, 3],
+    "title": "HackersGen Course — Artificial Intelligence",
+    "desc": "Corso avanzato di intelligenza artificiale: modelli ML, fondamenti di deep learning, applicazioni pratiche.",
+    "tag": "Corso / AI",
+    "icon": "Bot",
+    "color": "#7fffd4",
+    "category": "formazione"
+  },
+  {
+    "date": "Febbraio 2024",
+    "dateRange": [2024, 2],
+    "title": "HackersGen Course — Python Fundamentals",
+    "desc": "Corso completo di Python: sintassi, strutture dati, OOP, librerie standard, scripting e automazione.",
+    "tag": "Corso / Sviluppo",
+    "icon": "Code",
+    "color": "#468faf",
+    "category": "formazione"
+  },
+  {
+    "date": "Luglio 2023",
+    "dateRange": [2023, 7],
+    "title": "Esperienza Lavorativa a Londra",
+    "desc": "3 settimane in un negozio di abbigliamento nel Regno Unito: customer service, merchandising, problem solving in lingua inglese.",
+    "tag": "Lavoro / Estero",
+    "icon": "Plane",
+    "color": "#014f86",
+    "category": "lavoro"
+  },
+  {
+    "date": "Giugno 2023",
+    "dateRange": [2023, 6],
+    "title": "PCTO -Casa ATC Servizi SRL",
+    "desc": "Utilizzo software aziendali, data entry, gestione documentale e supporto operativo all'interno dell'ufficio.",
+    "tag": "Lavoro / Ufficio",
+    "icon": "Briefcase",
+    "color": "#013a63",
+    "category": "lavoro"
+  },
+  {
+    "date": "Aprile 2023",
+    "dateRange": [2023, 4],
+    "title": "Corso Sicurezza Specifica",
+    "desc": "Formazione obbligatoria sulla sicurezza sul lavoro: rischi specifici, DPI, procedure di emergenza e normative.",
+    "tag": "Corso / Sicurezza",
+    "icon": "Shield",
+    "color": "#5a9b86",
+    "category": "formazione"
+  },
+  {
+    "date": "Settembre 2022 – Marzo 2023",
+    "dateRange": [2023, 3],
+    "title": "Progetto SARP — Creazione Loghi",
+    "desc": "Progetto scolastico di grafica e branding: ideazione e realizzazione di loghi per aziende partner del progetto.",
+    "tag": "Progetto / Grafica",
+    "icon": "Palette",
+    "color": "#8ecae6",
+    "category": "progetto"
+  },
+  {
+    "date": "Giugno – Luglio 2022",
+    "dateRange": [2022, 7],
+    "title": "PCTO - Tutoraggio Robotica — Lego Mindstorm",
+    "desc": "Insegnamento della robotica a bambini e ragazzi attraverso Lego Mindstorm: logica, creatività, teamwork.",
+    "tag": "Tutoraggio / Educazione",
+    "icon": "Baby",
+    "color": "#4cc9f0",
+    "category": "lavoro"
+  },
+  {
+    "date": "Aprile – Giugno 2022",
+    "dateRange": [2022, 6],
+    "title": "PCTO - Filming the Fantastic — Politecnico di Torino",
+    "desc": "Corso su effetti speciali, ingegneria del cinema e nuovi mezzi di comunicazione. Progetti pratici di videomaking.",
+    "tag": " Corso / Cinema",
+    "icon": "Film",
+    "color": "#023e8a",
+    "category": "formazione"
+  }
+
+]

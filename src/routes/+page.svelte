@@ -93,7 +93,7 @@
   <div class="Project">
     <a href="/project">
       <div class="my-project">
-        <span>I miei progetti</span>
+        <span>Portfolio</span>
         <span class="material-symbols-outlined arrow">arrow_forward</span>
       </div>
     </a>
